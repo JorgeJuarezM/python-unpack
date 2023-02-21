@@ -28,8 +28,9 @@ jobs:
         run: |
           pip install -r requirements.txt
           python3 -m coverage run -m unittest
+          python3 -m coverage lcov
       - name: Code Coverage Report
         uses: romeovs/lcov-reporter-action@v0.2.11
         with:
-          lcov-file: .coverage
+          lcov-file: coverage.lcov
 
